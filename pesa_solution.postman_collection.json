@@ -1,0 +1,2814 @@
+{
+	"info": {
+		"_postman_id": "86f1c336-8450-4f76-ae20-af1a3e81b9c5",
+		"name": "Pesa Solution",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24714677"
+	},
+	"item": [
+		{
+			"name": "Test API",
+			"item": [
+				{
+					"name": "Wallet",
+					"item": [
+						{
+							"name": "MODIFY WALLET INFO",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"product\": \"6375f6059bf7593b57f214ae\",\r\n  \"user\": \"637253d324737aac853443b9\",\r\n  \"designation\": \"Mon premier wallet\",\r\n  \"initial_value\": 10,\r\n  \"liquidity_frequency\": 3,\r\n  \"cumulative_performance\": 20,\r\n  \"cumulative_performance_date\": \"2022-11-17 15:32:08.24\",\r\n  \"liquidity_value\": 34,\r\n  \"YTD\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/637601cd35b8eb1fdf522c4e",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"637601cd35b8eb1fdf522c4e"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE A WALLET",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/63764527be55acd52425d7b4",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"63764527be55acd52425d7b4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET USER INFO",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/user/637253d324737aac853443b9",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"user",
+										"637253d324737aac853443b9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET USER INFO WITH INVALID ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/user/637253d324737aac853443b10",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"user",
+										"637253d324737aac853443b10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE WALLET WITH INVALID ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/637601cd35b8eb1fdf522c4z",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"637601cd35b8eb1fdf522c4z"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY NON-EXISTENT WALLET",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"product\": \"637b4f98679c5b9380ca6a3f\",\r\n  \"user\": \"637253d324737aac853443b9\",\r\n  \"designation\": \"mon premier wallet\",\r\n  \"initial_value\": 10,\r\n  \"liquidity_frequency\": 3,\r\n  \"cumulative_performance\": 20,\r\n  \"cumulative_performance_date\": \"2022-11-17 15:32:08.24\",\r\n  \"liquidity_value\": 34,\r\n  \"YTD\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/637601cd35b8eb1fdf522c4z",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"637601cd35b8eb1fdf522c4z"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET CREATION WITH INVALID DATA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product\": \"###\",\r\n    \"user\": \"####\",\r\n    \"designation\": \"0\",\r\n    \"initial_value\": \"arrf\",\r\n    \"liquidity_frequency\": \"fqdsf\",\r\n    \"cumulative_performance\": \"dfqsdf\",\r\n    \"cumulative_performance_date\": \"aaaa\",\r\n    \"liquidity_value\": \"aaz\",\r\n    \"YTD\": \"sdzed\"\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET CREATION WITHOUT DATA",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product\": \"\",\r\n    \"user\": \"\",\r\n    \"designation\": \"\",\r\n    \"initial_value\": \"\",\r\n    \"liquidity_frequency\": \"\",\r\n    \"cumulative_performance\":\"\" ,\r\n    \"cumulative_performance_date\": \"\",\r\n    \"liquidity_value\":\"\" ,\r\n    \"YTD\": \"\"\r\n    }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET CREATION",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n      \"product\": \"637b4f98679c5b9380ca6a3f\",\r\n      \"user\": \"637b34f6679c5b9380ca6a2d\",\r\n      \"designation\": \"string\",\r\n      \"initial_value\": 0,\r\n      \"liquidity_frequency\": 0,\r\n      \"cumulative_performance\": 0,\r\n      \"performance_hebdo\": 0,\r\n      \"cumulative_performance_date\": \"2022-11-21\",\r\n      \"liquidity_value\": 0,\r\n      \"YTD\": 0\r\n      \r\n            }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "WALLET DISPLAY WITH SUCCESS",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "USER WALLET DISPLAY",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "USER WALLET DISPLAY WITH INVALID USER ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://pesa-backend-production.up.railway.app/api/v1/wallet/6376480ca1d",
+									"protocol": "https",
+									"host": [
+										"pesa-backend-production",
+										"up",
+										"railway",
+										"app"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wallet",
+										"6376480ca1d"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "CREATE USER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnireee\",\r\n  \"last_name\": \"fafnireeu\",\r\n  \"email\": \"fafnifafni56@mail.com\",\r\n  \"birth_day\": \"19990501\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": 3620,\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/register",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE EXISTING USER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message.toString()).to.equals(\"Cet utilisateur existe déjà\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnireee\",\r\n  \"last_name\": \"fafnireeu\",\r\n  \"email\": \"fafnifafnir456@mail.com\",\r\n  \"birth_day\": \"19990501\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": 3620,\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/register",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE Empty USER",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message[0].toString()).to.equals(\"first_name should not be empty\",\r",
+											"        \"last_name should not be empty\",\r",
+											"        \"email must be an email\",\r",
+											"        \"email should not be empty\",\r",
+											"        \"phone should not be empty\",\r",
+											"        \"birth_day must be a valid ISO 8601 date string\",\r",
+											"        \"birth_day should not be empty\",\r",
+											"        \"password must not be less than 6\",\r",
+											"        \"password must be an integer number\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"\",\r\n  \"last_name\": \"\",\r\n  \"email\": \"\",\r\n  \"birth_day\": \"\",\r\n  \"phone\": \"\",\r\n  \"password\":\"\",\r\n  \"role\": [\r\n    \"\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/register",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE USER Mail validation",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message[0].toString()).to.equals(\"birth_day should not be null or undefined\",\r",
+											"        \"birth_day must be a valid ISO 8601 date string\",\r",
+											"        \"birth_day should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnireee\",\r\n  \"last_name\": \"fafnireeu\",\r\n  \"email\": \"fafnifafnir456@mail.com\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": 3620,\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/register",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE USER Fail",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"password must not be less than 6\",\r",
+											"    \"password must be an integer number\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnireee\",\r\n  \"last_name\": \"fafnireeu\",\r\n  \"email\": \"fafnifafnir456@mail.com\",\r\n  \"birth_day\": \"19990501\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": \"ulrich\",\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/register",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Connect USER Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n              \"email\": \"hamman@mail.com\",\r\n              \"password\": 3620\r\n            }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/auth/login",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify user with bad user_id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message.toString()).to.equals(\"Internal server error\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{bad_user_id}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{bad_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with blank phone",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"phone should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with bad email address",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"email must be an email\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubognigmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"696452120\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with invalid email and password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"email must be an email\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubognigmari.is\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 20256410,\r\n        \"phone\": \"696452120\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with blank last name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"last_name should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with password contains letters",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"last_name should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with blank first_name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"last_name should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO with password less than 6",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message[0].toString()).to.equals(\"last_name should not be empty\");\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": 123456,\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "MODIFY USER INFO FAIL",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message[0].toString()).to.equals(\"password must not be less than 6\",\r",
+											"        \"password must be an integer number\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n        \"first_name\": \"Bogni\",\r\n        \"last_name\": \"Maffo\",\r\n        \"email\": \"ubogni@gmail.com\",\r\n        \"birth_day\": \"19990501\",\r\n        \"password\": \"1236\",\r\n        \"phone\": \"656493976\",\r\n        \"role\": [\r\n            \"Admin\"\r\n        ],\r\n        \"isEmailConfirmed\": true\r\n}\r\n        \r\n    \r\n            ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id2}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id2}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "USERS LIST",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}"
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "USER INFO",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnir\",\r\n  \"last_name\": \"fafniru\",\r\n  \"email\": \"fafnifafnir6@mail.com\",\r\n  \"birth_day\": \"19990501\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": 3620,\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{user_id}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "USER INFO FAIL",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message.toString()).to.equals(\"Cet utilisateur n'existe pas\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"first_name\": \"Fafnir\",\r\n  \"last_name\": \"fafniru\",\r\n  \"email\": \"fafnifafnir6@mail.com\",\r\n  \"phone\": \"696074191\",\r\n  \"password\": 3620,\r\n  \"role\": [\r\n    \"User\"\r\n  ],\r\n  \"isEmailConfirmed\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/6388b4a9f423b5faf26b61c",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"6388b4a9f423b5faf26b61c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE A USER",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/{{userdel_id}}",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"{{userdel_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE A USER FAIL",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message.toString()).to.equals(\"Internal server error\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/user/6388b4a9f423b5faf26b61c",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"user",
+										"6388b4a9f423b5faf26b61c"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODYyOWQyM2Q0YTg4ODIwOGUyYWMzMiIsImlhdCI6MTY3MDIyNzk1MCwiZXhwIjoxNjcwMzE0MzUwfQ.-xJdUlTV5rFiMOotjx9x0QFcaWpvy8eI4FTFX6vTLHI",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Produit",
+					"item": [
+						{
+							"name": "Ajouter produit",
+							"item": [
+								{
+									"name": "créer un produit avec toutes informations valides",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {\r",
+													"    pm.response.to.have.status(201);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"Produit de test\",\r\n  \"volume\": 50,\r\n  \"cours\": 1000,\r\n  \"rate_of_return\": 3,\r\n  \"interest_rate\": 1.5,\r\n  \"liquidity_frequency\": \"hebdomadaire\",\r\n  \"validity_date_cours\": \"2022-12-05\",\r\n  \"type\": \"action\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec la désignation manquante ou de mauvais type",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n \r\n  \"volume\": 50,\r\n  \"cours\": 1000,\r\n  \"rate_of_return\": 3,\r\n  \"interest_rate\": 1.5,\r\n  \"liquidity_frequency\": \"mensuel\",\r\n  \"validity_date_cours\": \"2022-12-04\",\r\n  \"type\": \"action\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec un volume invalide ou nul",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"Produit de test\",\r\n  \r\n  \"cours\": 1000,\r\n  \"rate_of_return\": 3,\r\n  \"interest_rate\": 1.5,\r\n  \"liquidity_frequency\": \"hebdomadaire\",\r\n  \"validity_date_cours\": \"2022-12-05\",\r\n  \"type\": \"action\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec cours invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"Produit de test\",\r\n  \"volume\": 0,\r\n  \"cours\": \"badvalue\",\r\n  \"rate_of_return\": 0,\r\n  \"interest_rate\": 0,\r\n  \"liquidity_frequency\": [\r\n    \"mensuel\",\r\n    \"hebdomadaire\"\r\n  ],\r\n  \"validity_date_cours\": \"2022-12-01T14:25:21.204Z\",\r\n  \"type\": [\r\n    \"action\",\r\n    \"obligation\"\r\n  ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec \"rate_of_return\" invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"Produit de test\",\r\n  \"volume\": 0,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": \"badvalue\",\r\n  \"interest_rate\": 0,\r\n  \"liquidity_frequency\": [\r\n    \"mensuel\",\r\n    \"hebdomadaire\"\r\n  ],\r\n  \"validity_date_cours\": \"2022-12-01T14:25:21.204Z\",\r\n  \"type\": [\r\n    \"action\",\r\n    \"obligation\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec \"interest_rate\" invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"Produit de test\",\r\n  \"volume\": 0,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 0,\r\n  \"interest_rate\": \"0\",\r\n  \"liquidity_frequency\": [\r\n    \"mensuel\",\r\n    \"hebdomadaire\"\r\n  ],\r\n  \"validity_date_cours\": \"2022-12-01T14:25:21.204Z\",\r\n  \"type\": [\r\n    \"action\",\r\n    \"obligation\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec \"liquidity_frequency\" invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"string\",\r\n  \"volume\": 0,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 0,\r\n  \"interest_rate\": 0,\r\n  \"liquidity_frequency\": [\r\n    0\r\n  ],\r\n  \"validity_date_cours\": \"2022-12-01T14:25:21.204Z\",\r\n  \"type\": [\r\n    \"action\",\r\n    \"obligation\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un  produit avec \"validity_date_cours\" invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg = pm.environment.get(\"data_msg\");\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"string\",\r\n  \"volume\": 0,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 0,\r\n  \"interest_rate\": 0,\r\n  \"liquidity_frequency\": [\r\n    \"mensuel\",\r\n    \"hebdomadaire\"\r\n  ],\r\n  \"validity_date_cours\": 0,\r\n  \"type\": [\r\n    \"action\",\r\n    \"obligation\"\r\n  ]\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "créer un produit avec \"type\" invalide ou absent",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"data_msg= [\"type must be a valid enum value\"]\r",
+													"pm.test(\"message renvoyé\", function () {\r",
+													"    json_data = pm.response.json();\r",
+													"    for(i = 0; i<data_msg.lenght; i++){\r",
+													"         pm.expect(json_data.message[i].toString()).to.equals(data_msg[i]);\r",
+													"    }\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"string\",\r\n  \"volume\": 0,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 0,\r\n  \"interest_rate\": 0,\r\n  \"liquidity_frequency\": \r\n    \"mensuel\",\r\n  \"validity_date_cours\": \"2022-12-01T14:25:21.204Z\",\r\n  \"type\": \"faux type\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{Token}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Afficher produit",
+							"item": [
+								{
+									"name": "Afficher tous les produits",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "rechercher un produit à partir de son id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/637b4f98679c5b9380ca6a3f",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"637b4f98679c5b9380ca6a3f"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "rechercher un produit à partir d'un id inexistant/invalide",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/6375f44825a05dc947a",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"6375f44825a05dc947a"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Supprimer produit",
+							"item": [
+								{
+									"name": "Supprimer un produit inexistant",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/6385e3410a5ec674dd612709",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"6385e3410a5ec674dd612709"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Modifier produit",
+							"item": [
+								{
+									"name": "Modifier produit",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"produitDeTest7\",\r\n  \"volume\": 2,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 3,\r\n  \"interest_rate\": 2,\r\n  \"liquidity_frequency\": \r\n    \"mensuel\",\r\n  \"validity_date_cours\": \"2022-12-02T08:30:38.998Z\",\r\n  \"type\": \r\n    \"action\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/63875ec83d4a888208e2af6e",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"63875ec83d4a888208e2af6e"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "modifier un produit en ajoutant des informations invalide",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"produitDeTest8\",\r\n  \"volume\": \"volume en string au lieu de number\",\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 3,\r\n  \"interest_rate\": 2,\r\n  \"liquidity_frequency\": \r\n    \"mensuel\",\r\n  \"validity_date_cours\": \"2022-12-02T08:30:38.998Z\",\r\n  \"type\": \r\n    \"action\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/63875ec83d4a888208e2af6e",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"63875ec83d4a888208e2af6e"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "modifier un produit inexistant",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code is 500\", function () {\r",
+													"    pm.response.to.have.status(500);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"designation\": \"produitDeTest9\",\r\n  \"volume\": 7,\r\n  \"cours\": 0,\r\n  \"rate_of_return\": 4,\r\n  \"interest_rate\": 2,\r\n  \"liquidity_frequency\": \r\n    \"mensuel\",\r\n  \"validity_date_cours\": \"2022-12-02T08:30:38.998Z\",\r\n  \"type\": \r\n    \"action\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/63875ec83d4a888208e2af6",
+											"protocol": "https",
+											"host": [
+												"pesa-backend-production",
+												"up",
+												"railway",
+												"app"
+											],
+											"path": [
+												"api",
+												"v1",
+												"product",
+												"63875ec83d4a888208e2af6"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login super admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ub@gmail.com\",\r\n    \"password\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/auth/login",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login super admin FAIL",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.message.toString()).to.equals(\"Cet utilisateur n'existe pas\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"FB@gmail.com\",\r\n    \"password\": 1234\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/auth/login",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login super admin FAIL Password",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {\r",
+											"    pm.response.to.have.status(401);\r",
+											"});\r",
+											"pm.test(\"Message Correspondance\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"     pm.expect(jsonData.message.toString()).to.equals(\"Mot de passe invalide\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"ub@gmail.com\",\r\n    \"password\": 123\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}api/v1/auth/login",
+									"host": [
+										"{{BASE_URL}}api"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Non automatisable",
+			"item": [
+				{
+					"name": "Supprimer un produit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://pesa-backend-production.up.railway.app/api/v1/product/{id}",
+							"protocol": "https",
+							"host": [
+								"pesa-backend-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TokenPESA}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id",
+			"value": "637b34f6679c5b9380ca6a2d"
+		},
+		{
+			"key": "userdel_id",
+			"value": "637b3a5d679c5b9380ca6a37"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "https://pesa-backend-production.up.railway.app/"
+		}
+	]
+}
